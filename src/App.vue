@@ -1,26 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <body class="asking-timer">
+    <TheHeader />
+    <TitleSetting />
+    <Timer />
+    <TheFooter />
+  </body>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TheHeader from './components/TheHeader.vue'
+import Timer from './components/Timer.vue'
+import TitleSetting from './components/TitleSetting.vue'
+import TheFooter from './components/TheFooter.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TheHeader,
+    Timer,
+    TitleSetting,
+    TheFooter
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import 'assets/css/destyle.css';
+.asking-timer{
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  line-height: 1.5;
 }
 </style>
