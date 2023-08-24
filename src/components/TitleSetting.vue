@@ -2,7 +2,8 @@
   <div class="title_setting">
       <p><input type="text" class="title_input" v-model="taskTitle" v-if="!editmode" placeholder="疑問点を入力" /></p>
       <p type="text" class="task_title" v-if="editmode">【現在直面している疑問点】</p>
-      <p type="text" class="task_title" v-if="editmode">{{taskTitle}}</p>
+      <p type="text" class="task_title" v-if="editmode">「{{taskTitle}}」</p>
+      <p type="text" class="task_title" v-if="editmode">開始時間 : {{currentTime}}</p>
       <button class="btn" @click="changeMode">
         {{ editmode ? '変更' : '登録' }}
       </button>
@@ -13,9 +14,20 @@
 import {ref} from 'vue';
 const taskTitle = ref('');
 const editmode = ref(false);
+const currentTime = ref('');
 
 const changeMode = () => {
   if (taskTitle.value !== ''){
+    if(!editmode.value){
+      const date  = new Date();
+      let h = date.getHours();
+      let m = date.getMinutes();
+      let s = date.getSeconds();
+      if(h < 10) h = "0" + h;
+      if(m < 10) m = "0" + m;
+      if(s < 10) s = "0" + s;
+      currentTime.value = h + ":" + m + ":" + s;
+    }
     editmode.value = !editmode.value;
   } else {
     alert("入力ボックスに課題を入力してから登録してください。");

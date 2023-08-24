@@ -6,17 +6,21 @@
       </div>
       <button class="btn" @click="start" v-if="!timerOn">Start</button>
       <button class="btn" @click="stop" v-if="timerOn">Stop</button>
+      <button class="btn" @click="reset">Reset</button>
     </div>
   </div>
 </template>
 
 <script>
+import {ref} from 'vue';
+const initial_min = ref(15);
+const initial_sec = ref(0);
 export default {
   name: 'my_timer',
   data() {
     return {
-      min: 15,
-      sec: 0,
+      min: initial_min.value,
+      sec: initial_sec.value,
       timerOn: false,
       timerObj: null,
       changeMode: false,
@@ -31,6 +35,13 @@ export default {
         this.complete();
       } else {
         this.sec --;
+      }
+    },
+    reset: function(){
+      this.min = initial_min.value;
+      this.sec = initial_sec.value;
+      if (this.timerOn){
+        this.stop();//強制的にタイマーストップ
       }
     },
 
@@ -70,6 +81,7 @@ export default {
 
 <style scoped>
 #my_timer {
+  margin: 30px;
   display: flex;
   justify-content: center;
   line-height: 1;
