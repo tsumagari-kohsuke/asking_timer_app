@@ -21,4 +21,5 @@ import TheFooter from './components/TheFooter.vue'
   text-align: center;
   line-height: 1.5;
 }
+
 </style>
