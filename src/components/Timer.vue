@@ -19,6 +19,7 @@ export default {
       sec: 0,
       timerOn: false,
       timerObj: null,
+      changeMode: false,
     }
   },
   methods: {
@@ -46,6 +47,7 @@ export default {
 
     complete: function() {
       clearInterval(this.timerObj)
+      alert('時間になりました。\n解決していなければ質問に行きましょう。')
     }
   },
   computed: {

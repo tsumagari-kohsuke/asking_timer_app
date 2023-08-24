@@ -7,21 +7,12 @@
   </body>
 </template>
 
-<script>
+<script setup>
 import TheHeader from './components/TheHeader.vue'
 import Timer from './components/Timer.vue'
 import TitleSetting from './components/TitleSetting.vue'
 import TheFooter from './components/TheFooter.vue'
 
-export default {
-  name: 'App',
-  components: {
-    TheHeader,
-    Timer,
-    TitleSetting,
-    TheFooter
-  }
-}
 </script>
 
 <style>
