@@ -18,10 +18,25 @@
 
 <script setup>
 import {ref} from 'vue';
+
+/**
+ * 疑問点
+ */
 const taskTitle = ref('');
+
+/**
+ * 編集モードかどうか
+ */
 const editmode = ref(true);
+
+/**
+ * 登録時刻
+ */
 const currentTime = ref('');
 
+/**
+ * 登録する
+ */
 const register = () => {
   if (taskTitle.value === '') {
     return;
@@ -33,14 +48,26 @@ const register = () => {
   leaveEditMode();
 }
 
+/**
+ * 編集モードに入る
+ */
 const enterEditMode = () => {
   editmode.value = true;
 }
 
+/**
+ * 編集モードから抜ける
+ */
 const leaveEditMode = () => {
   editmode.value = false;
 }
 
+/**
+ * 時刻をhh:mm:ssの形式にフォーマットする
+ * @param {number} h 時
+ * @param {number} m 分
+ * @param {number} s 秒
+ */
 const formatDate = (h, m, s) => {
   if(h < 10) h = "0" + h;
   if(m < 10) m = "0" + m;
