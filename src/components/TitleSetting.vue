@@ -1,10 +1,10 @@
 <template>
   <div class="title_setting">
-      <p v-if="!editmode">
+      <p v-if="editmode">
         <input type="text" class="title_input" v-model="taskTitle" placeholder="疑問点を入力" />
       </p>
       
-      <template v-if="editmode">
+      <template v-if="!editmode">
         <p class="task_title">【現在直面している問題点】</p>
         <p class="task_title">「{{taskTitle}}」</p>
         <p class="task_title">登録された時間 : {{currentTime}}</p>
@@ -19,7 +19,7 @@
 <script setup>
 import {ref} from 'vue';
 const taskTitle = ref('');
-const editmode = ref(false);
+const editmode = ref(true);
 const currentTime = ref('');
 
 const changeMode = () => {
