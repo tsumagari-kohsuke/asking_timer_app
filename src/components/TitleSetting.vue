@@ -1,9 +1,9 @@
 <template>
   <div class="title_setting">
       <p><input type="text" class="title_input" v-model="taskTitle" v-if="!editmode" placeholder="疑問点を入力" /></p>
-      <p type="text" class="task_title" v-if="editmode">【現在直面している疑問点】</p>
+      <p type="text" class="task_title" v-if="editmode">【現在直面している問題点】</p>
       <p type="text" class="task_title" v-if="editmode">「{{taskTitle}}」</p>
-      <p type="text" class="task_title" v-if="editmode">開始時間 : {{currentTime}}</p>
+      <p type="text" class="task_title" v-if="editmode">登録された時間 : {{currentTime}}</p>
       <button class="btn" @click="changeMode">
         {{ editmode ? '変更' : '登録' }}
       </button>
