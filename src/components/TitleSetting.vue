@@ -23,6 +23,10 @@ const editmode = ref(true);
 const currentTime = ref('');
 
 const register = () => {
+  if (taskTitle.value === '') {
+    return;
+  }
+
   const date  = new Date();
   currentTime.value = formatDate(date.getHours(), date.getMinutes(), date.getSeconds());
 
