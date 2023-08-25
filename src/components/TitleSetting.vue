@@ -1,18 +1,18 @@
 <template>
   <div class="question_area">
-      <div v-if="editMode" class="edit_area">
-        <input type="text" class="question_input" v-model="question" placeholder="疑問点を入力" @keypress.enter="register" />
+    <div v-if="editMode" class="edit_area">
+      <input type="text" class="question_input" v-model="question" placeholder="疑問点を入力" @keypress.enter="register" />
 
-        <button class="btn" :disabled="!question" @click="register">登録</button>
-      </div>
-      
-      <template v-if="!editMode">
-        <p class="paragraph">【現在直面している問題点】</p>
-        <p class="paragraph">「{{question}}」</p>
-        <p class="paragraph">登録された時間 : {{registerationTime}}</p>
+      <button class="btn" :disabled="!question" @click="register">登録</button>
+    </div>
+    
+    <template v-if="!editMode">
+      <p class="paragraph">【現在直面している問題点】</p>
+      <p class="paragraph">「{{question}}」</p>
+      <p class="paragraph">登録された時間 : {{registerationTime}}</p>
 
-        <button class="btn" @click="enterEditMode">変更</button>
-      </template>
+      <button class="btn" @click="enterEditMode">変更</button>
+    </template>
   </div>
 </template>
 
@@ -79,7 +79,7 @@ const formatTime = (h, m, s) => {
 
 <style scoped>
 .question_area {
-  margin: 30px;
+  padding-top: 30px;
 }
 
 .edit_area {
