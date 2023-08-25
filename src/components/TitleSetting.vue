@@ -1,7 +1,7 @@
 <template>
   <div class="title_setting">
       <div v-if="editmode" class="edit_area">
-        <input type="text" class="title_input" v-model="taskTitle" placeholder="疑問点を入力" />
+        <input type="text" class="title_input" v-model="taskTitle" placeholder="疑問点を入力" @keypress.enter="register" />
 
         <button class="btn" :disabled="!taskTitle" @click="register">登録</button>
       </div>
