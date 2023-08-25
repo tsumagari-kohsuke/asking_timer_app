@@ -1,4 +1,12 @@
 # asking_timer
+## 概要
+15分ルールに従って質問をしに行くことをアラートしてくれるタイマーアプリです。
+//画像を埋め込む
+
+## 実装
+シングルファイルコンポーネント(SFC)とCompositionAPIを用いてVue.jsで実装しています。
+(Timer.vueだけは最初に書いたのでOptionsAPIで記述しています。)
+
 
 ## Project setup
 ```
