@@ -33,7 +33,7 @@ const register = () => {
     if(s < 10) s = "0" + s;
     currentTime.value = h + ":" + m + ":" + s;
 
-    editmode.value = !editmode.value;
+    leaveEditMode();
   } else {
     alert("入力ボックスに課題を入力してから登録してください。");
   }
@@ -41,6 +41,10 @@ const register = () => {
 
 const enterEditMode = () => {
   editmode.value = true;
+}
+
+const leaveEditMode = () => {
+  editmode.value = false;
 }
 
 </script>
