@@ -1,15 +1,15 @@
 <template>
-  <div class="title_setting">
-      <div v-if="editmode" class="edit_area">
-        <input type="text" class="title_input" v-model="taskTitle" placeholder="疑問点を入力" @keypress.enter="register" />
+  <div class="question_area">
+      <div v-if="editMode" class="edit_area">
+        <input type="text" class="question_input" v-model="question" placeholder="疑問点を入力" @keypress.enter="register" />
 
-        <button class="btn" :disabled="!taskTitle" @click="register">登録</button>
+        <button class="btn" :disabled="!question" @click="register">登録</button>
       </div>
       
-      <template v-if="!editmode">
-        <p class="task_title">【現在直面している問題点】</p>
-        <p class="task_title">「{{taskTitle}}」</p>
-        <p class="task_title">登録された時間 : {{currentTime}}</p>
+      <template v-if="!editMode">
+        <p class="paragraph">【現在直面している問題点】</p>
+        <p class="paragraph">「{{question}}」</p>
+        <p class="paragraph">登録された時間 : {{registerationTime}}</p>
 
         <button class="btn" @click="enterEditMode">変更</button>
       </template>
@@ -22,28 +22,28 @@ import {ref} from 'vue';
 /**
  * 疑問点
  */
-const taskTitle = ref('');
+const question = ref('');
 
 /**
  * 編集モードかどうか
  */
-const editmode = ref(true);
+const editMode = ref(true);
 
 /**
  * 登録時刻
  */
-const currentTime = ref('');
+const registerationTime = ref('');
 
 /**
  * 登録する
  */
 const register = () => {
-  if (taskTitle.value === '') {
+  if (question.value === '') {
     return;
   }
 
   const date  = new Date();
-  currentTime.value = formatDate(date.getHours(), date.getMinutes(), date.getSeconds());
+  registerationTime.value = formatTime(date.getHours(), date.getMinutes(), date.getSeconds());
 
   leaveEditMode();
 }
@@ -52,14 +52,14 @@ const register = () => {
  * 編集モードに入る
  */
 const enterEditMode = () => {
-  editmode.value = true;
+  editMode.value = true;
 }
 
 /**
  * 編集モードから抜ける
  */
 const leaveEditMode = () => {
-  editmode.value = false;
+  editMode.value = false;
 }
 
 /**
@@ -68,7 +68,7 @@ const leaveEditMode = () => {
  * @param {number} m 分
  * @param {number} s 秒
  */
-const formatDate = (h, m, s) => {
+const formatTime = (h, m, s) => {
   if(h < 10) h = "0" + h;
   if(m < 10) m = "0" + m;
   if(s < 10) s = "0" + s;
@@ -78,7 +78,7 @@ const formatDate = (h, m, s) => {
 </script>
 
 <style scoped>
-.title_setting {
+.question_area {
   margin: 30px;
 }
 
@@ -89,13 +89,13 @@ const formatDate = (h, m, s) => {
   align-items: center;
 }
 
-.task_title {
+.paragraph {
   padding: 8px;
   font-size: 21px;
   text-align: center;
 }
 
-.title_input {
+.question_input {
   width: 300px;
   padding: 8px;
   font-size: 20px;
