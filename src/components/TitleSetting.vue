@@ -2,17 +2,17 @@
   <div class="title_setting">
       <p v-if="editmode">
         <input type="text" class="title_input" v-model="taskTitle" placeholder="疑問点を入力" />
+
+        <button class="btn" @click="changeMode">登録</button>
       </p>
       
       <template v-if="!editmode">
         <p class="task_title">【現在直面している問題点】</p>
         <p class="task_title">「{{taskTitle}}」</p>
         <p class="task_title">登録された時間 : {{currentTime}}</p>
-      </template>
 
-      <button class="btn" @click="changeMode">
-        {{ editmode ? '変更' : '登録' }}
-      </button>
+        <button class="btn" @click="enterEditMode">変更</button>
+      </template>
   </div>
 </template>
 
@@ -38,6 +38,10 @@ const changeMode = () => {
   } else {
     alert("入力ボックスに課題を入力してから登録してください。");
   }
+}
+
+const enterEditMode = () => {
+  editmode.value = true;
 }
 
 </script>
