@@ -1,10 +1,10 @@
 <template>
   <div class="title_setting">
-      <p v-if="editmode">
+      <div v-if="editmode" class="edit_area">
         <input type="text" class="title_input" v-model="taskTitle" placeholder="疑問点を入力" />
 
         <button class="btn" @click="changeMode">登録</button>
-      </p>
+      </div>
       
       <template v-if="!editmode">
         <p class="task_title">【現在直面している問題点】</p>
@@ -49,6 +49,13 @@ const enterEditMode = () => {
 <style scoped>
 .title_setting {
   margin: 30px;
+}
+
+.edit_area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .task_title {
