@@ -2,7 +2,7 @@
   <body class="asking-timer">
     <TheHeader />
     <TitleSetting />
-    <Timer />
+        <Timer />
     <TheFooter />
   </body>
 </template>
@@ -18,8 +18,13 @@ import TheFooter from './components/TheFooter.vue'
 <style>
 @import 'assets/css/destyle.css';
 .asking-timer{
+  font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体',sans-serif;
   text-align: center;
   line-height: 1.5;
 }
 
+.btn{
+  color: #fff;
+  background-color: #eb6100;
+}
 </style>

@@ -56,11 +56,15 @@ const changeMode = () => {
 }
 
 .btn {
+  margin-top: 10px;
   padding: 8px;
+  border: 1px solid #0000;
   background-color: #03a9f4;
   border-radius: 6px;
   color: #fff;
   text-align: center;
   font-size: 14px;
+  border-bottom: 5px solid #03a9f4;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
 </style>

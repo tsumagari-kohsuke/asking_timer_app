@@ -4,7 +4,7 @@
 
 <style scoped>
 .theheader{
-  font-size: 32px;
+  font-size: 40px;
   padding: 8px 0;
   background-color: rgb(159, 236, 189);
 }
