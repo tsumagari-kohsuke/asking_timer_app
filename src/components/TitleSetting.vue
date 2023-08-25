@@ -23,14 +23,10 @@ const editmode = ref(true);
 const currentTime = ref('');
 
 const register = () => {
-  if (taskTitle.value !== ''){
-    const date  = new Date();
-    currentTime.value = formatDate(date.getHours(), date.getMinutes(), date.getSeconds());
+  const date  = new Date();
+  currentTime.value = formatDate(date.getHours(), date.getMinutes(), date.getSeconds());
 
-    leaveEditMode();
-  } else {
-    alert("入力ボックスに課題を入力してから登録してください。");
-  }
+  leaveEditMode();
 }
 
 const enterEditMode = () => {
