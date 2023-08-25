@@ -3,7 +3,7 @@
       <div v-if="editmode" class="edit_area">
         <input type="text" class="title_input" v-model="taskTitle" placeholder="疑問点を入力" />
 
-        <button class="btn" @click="register">登録</button>
+        <button class="btn" :disabled="!taskTitle" @click="register">登録</button>
       </div>
       
       <template v-if="!editmode">
@@ -86,5 +86,10 @@ const formatDate = (h, m, s) => {
   font-size: 14px;
   border-bottom: 5px solid #222;
   box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+.btn:disabled {
+  background-color: #aaa;
+  border-bottom-color: #aaa;
 }
 </style>
