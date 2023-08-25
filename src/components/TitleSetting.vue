@@ -3,7 +3,7 @@
       <div v-if="editmode" class="edit_area">
         <input type="text" class="title_input" v-model="taskTitle" placeholder="疑問点を入力" />
 
-        <button class="btn" @click="changeMode">登録</button>
+        <button class="btn" @click="register">登録</button>
       </div>
       
       <template v-if="!editmode">
@@ -22,7 +22,7 @@ const taskTitle = ref('');
 const editmode = ref(true);
 const currentTime = ref('');
 
-const changeMode = () => {
+const register = () => {
   if (taskTitle.value !== ''){
     const date  = new Date();
     let h = date.getHours();
@@ -32,7 +32,7 @@ const changeMode = () => {
     if(m < 10) m = "0" + m;
     if(s < 10) s = "0" + s;
     currentTime.value = h + ":" + m + ":" + s;
-    
+
     editmode.value = !editmode.value;
   } else {
     alert("入力ボックスに課題を入力してから登録してください。");
