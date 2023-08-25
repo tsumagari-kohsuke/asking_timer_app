@@ -1,8 +1,12 @@
 <template>
   <body class="asking-timer">
     <TheHeader />
-    <TitleSetting />
-        <Timer />
+    <table class="table_box">
+      <TitleSetting />
+    </table>
+    <table class="table_box">
+      <Timer />
+    </table>
     <TheFooter />
   </body>
 </template>
@@ -17,6 +21,7 @@ import TheFooter from './components/TheFooter.vue'
 
 <style>
 @import 'assets/css/destyle.css';
+
 .asking-timer{
   font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体',sans-serif;
   text-align: center;
@@ -26,5 +31,15 @@ import TheFooter from './components/TheFooter.vue'
 .btn{
   color: #fff;
   background-color: #eb6100;
+}
+
+.table_box{
+  margin-top: 10px;
+  width: 60%;
+  height: 250px;
+  padding: 2000px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px #333 solid;
 }
 </style>

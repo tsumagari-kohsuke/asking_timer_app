@@ -5,7 +5,8 @@
 <style scoped>
 .theheader{
   font-size: 40px;
-  padding: 8px 0;
-  background-color: rgb(159, 236, 189);
+  padding: 10px 0;
+  background-color: #333;
+  color: #fff;
 }
 </style>

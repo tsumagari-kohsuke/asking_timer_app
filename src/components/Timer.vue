@@ -95,25 +95,23 @@ export default {
 }
 .btn {
   padding: 8px;
-  border: 1px solid #0000;
-  background-color: #03a9f4;
+  background-color: #333;
   border-radius: 6px;
   color: #fff;
   text-align: center;
   font-size: 14px;
-  border-bottom: 5px solid #03a9f4;
+  border-bottom: 5px solid #222;
   box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
 .btn_left{
   margin-left: 10px;
   padding: 8px;
-  border: 1px solid #0000;
-  background-color: #03a9f4;
+  background-color: #333;
   border-radius: 6px;
   color: #fff;
   text-align: center;
   font-size: 14px;
-  border-bottom: 5px solid #03a9f4;
+  border-bottom: 5px solid #222;
   box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
 .circle {
@@ -124,7 +122,7 @@ export default {
   line-height: 100px;
   text-align: center;
   border-radius: 50%;
-  border: solid 5px skyblue;
+  border: solid 5px #333;
 }
 @import url("https://fonts.googleapis.com/css2?family=Stardos+Stencil:ital,wght@0,400&display=swap");
 .my_time{
