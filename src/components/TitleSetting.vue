@@ -24,16 +24,15 @@ const currentTime = ref('');
 
 const changeMode = () => {
   if (taskTitle.value !== ''){
-    if(!editmode.value){
-      const date  = new Date();
-      let h = date.getHours();
-      let m = date.getMinutes();
-      let s = date.getSeconds();
-      if(h < 10) h = "0" + h;
-      if(m < 10) m = "0" + m;
-      if(s < 10) s = "0" + s;
-      currentTime.value = h + ":" + m + ":" + s;
-    }
+    const date  = new Date();
+    let h = date.getHours();
+    let m = date.getMinutes();
+    let s = date.getSeconds();
+    if(h < 10) h = "0" + h;
+    if(m < 10) m = "0" + m;
+    if(s < 10) s = "0" + s;
+    currentTime.value = h + ":" + m + ":" + s;
+    
     editmode.value = !editmode.value;
   } else {
     alert("入力ボックスに課題を入力してから登録してください。");
