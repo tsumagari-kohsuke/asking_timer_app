@@ -1,6 +1,6 @@
 <template>
   <footer class="thefooter">
-    <middle>&copy;asking-timer</middle>
+    <div>&copy;asking-timer</div>
     <br>
     <a href="https://github.com/tsumagari-kohsuke/asking_timer_app">
       <img src="../assets/github-mark.png" alt="Logo" class="footer_logo" />
