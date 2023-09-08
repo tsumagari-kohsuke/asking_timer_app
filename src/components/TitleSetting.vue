@@ -1,12 +1,12 @@
 <template>
   <div class="question_area">
-    <div v-if="editMode" class="edit_area">
+    <div v-if="isEditMode" class="edit_area">
       <input type="text" class="question_input" v-model="question" placeholder="疑問点を入力" @keypress.enter="register" />
 
       <button class="btn" :disabled="!question" @click="register">登録</button>
     </div>
     
-    <template v-if="!editMode">
+    <template v-if="!isEditMode">
       <p class="paragraph">【現在直面している問題点】</p>
       <p class="paragraph">「{{question}}」</p>
       <p class="paragraph">登録された時間 : {{registerationTime}}</p>
@@ -27,7 +27,7 @@ const question = ref('');
 /**
  * 編集モードかどうか
  */
-const editMode = ref(true);
+const isEditMode = ref(true);
 
 /**
  * 登録時刻
@@ -52,14 +52,14 @@ const register = () => {
  * 編集モードに入る
  */
 const enterEditMode = () => {
-  editMode.value = true;
+  isEditMode.value = true;
 }
 
 /**
  * 編集モードから抜ける
  */
 const leaveEditMode = () => {
-  editMode.value = false;
+  isEditMode.value = false;
 }
 
 /**
